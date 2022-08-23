@@ -1,7 +1,8 @@
 import { Component } from 'react';
+import { IMovie } from '../types/movie-types';
 
 interface MovieCardProps {
-    movie: any;
+    movie: IMovie;
 }
 
 export class MovieCard extends Component<MovieCardProps> {

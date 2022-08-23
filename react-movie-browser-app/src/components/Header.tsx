@@ -1,11 +1,11 @@
 import { Component } from 'react';
 
-interface HeaderProps {
+type HeaderProps = {
     fetchMovies: (searchText: string) => void;
-}
+};
 
 export class Header extends Component<HeaderProps> {
-    state = { searchText: '' };
+    state = { searchText: localStorage.searchText || '' };
 
     changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({ searchText: e.target.value });
@@ -19,6 +19,7 @@ export class Header extends Component<HeaderProps> {
         // we must call a method coming from the parent as prop to fetch new movies based on
         // the search text
         this.props.fetchMovies(this.state.searchText);
+        localStorage.setItem('searchText', this.state.searchText);
     };
 
     render() {
@@ -35,7 +36,6 @@ export class Header extends Component<HeaderProps> {
                                     {/* a HTML input which is tightly bound with the 
                                     state is a.k.a a controlled input */}
                                     <input
-                                        name='q'
                                         value={this.state.searchText}
                                         onChange={this.changeHandler}
                                         autoFocus

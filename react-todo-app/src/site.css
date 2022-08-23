@@ -1,0 +1,11 @@
+#toolbar {
+    visibility: hidden;
+}
+
+#todoEntry:hover  #toolbar {
+    visibility: visible;
+}
+
+button.btn {
+    margin: 10px 10px 0 0;
+}
