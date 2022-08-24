@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import withLoading from './withLoading';
 interface ICustomer {
     id: number;
     firstname: string;
@@ -52,4 +53,6 @@ export class CustomerList extends Component<CustomerListProps> {
     }
 }
 
-export default CustomerList;
+export default withLoading(CustomerList, 'customers');
+
+// export default withLoading('customers')(CustomerList);
