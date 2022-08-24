@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { Provider } from 'react-redux';
+import Counter from './components/Counter';
 import CounterFc from './components/CounterFc';
+import Toolbar from './components/Toolbar';
 import ToolbarFc from './components/ToolbarFc';
 import store from './redux/store';
 
@@ -13,6 +15,11 @@ export class App extends Component {
 
                     <CounterFc />
                     <ToolbarFc />
+
+                    <hr />
+
+                    <Counter />
+                    <Toolbar />
                 </div>
             </Provider>
         );
