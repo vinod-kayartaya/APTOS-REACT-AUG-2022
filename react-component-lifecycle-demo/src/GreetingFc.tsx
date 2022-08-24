@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import withBorder from './withBorder';
 
 const GreetingFc = () => {
     let [name, setName] = useState('friend');
@@ -65,4 +66,4 @@ const GreetingFc = () => {
     );
 };
 
-export default GreetingFc;
+export default withBorder(GreetingFc, { borderColor: 'blue' });

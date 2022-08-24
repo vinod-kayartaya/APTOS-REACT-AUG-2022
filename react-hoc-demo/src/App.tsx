@@ -19,7 +19,11 @@ export class App extends Component {
                 <div className='container'>
                     <h1>Customer list</h1>
                     <hr />
-                    <CustomerList customers={this.state.customers} />
+                    <CustomerList
+                        customers={this.state.customers}
+                        firstname='Vinod'
+                        lastname='Kumar'
+                    />
                 </div>
             </>
         );

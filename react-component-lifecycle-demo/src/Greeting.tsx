@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import withBorder from './withBorder';
 
 type IPost = {
     id: number;
@@ -58,4 +59,4 @@ export class Greeting extends Component<GreetingProps, GreetingState> {
     }
 }
 
-export default Greeting;
+export default withBorder(Greeting, { borderColor: 'red' });

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Greeting from './Greeting';
 import GreetingFc from './GreetingFc';
 
 const AppFc = () => {
@@ -17,6 +18,7 @@ const AppFc = () => {
                 </button>
 
                 {greetingVisible && <GreetingFc />}
+                {greetingVisible && <Greeting isUpper={true} />}
             </div>
         </>
     );

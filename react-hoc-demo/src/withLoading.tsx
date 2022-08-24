@@ -6,6 +6,7 @@ function withLoading(OriginalComponent: any, key: string) {
     // and finally return a new/modified component
 
     return (props: any) => {
+        console.log('props is', props);
         const data = props[key];
 
         return data.length === 0 ? (
