@@ -22,7 +22,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "customer-rest-server": "json-server --port 8080 --delay 1500 --watch ./db.json"
+        "customer-rest-server": "json-server --port 8080 --delay 1 --watch ./db.json"
     },
     "eslintConfig": {
         "extends": [
