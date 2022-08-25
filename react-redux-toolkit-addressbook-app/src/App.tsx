@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import { Provider } from 'react-redux';
+import ContactDetails from './components/ContactDetails';
+import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
-import ContactListFc from './components/ContactListFc';
 import store from './redux/store';
 
 export class App extends Component {
@@ -15,10 +16,13 @@ export class App extends Component {
 
                     <div className='row'>
                         <div className='col'>
+                            <ContactForm />
+                        </div>
+                        <div className='col'>
                             <ContactList />
                         </div>
                         <div className='col'>
-                            <ContactListFc />
+                            <ContactDetails />
                         </div>
                     </div>
                 </div>

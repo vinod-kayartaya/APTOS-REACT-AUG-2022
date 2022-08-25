@@ -9,4 +9,5 @@ export interface IContact {
 export type ContactCardProps = {
     contact: IContact;
     deleteContact: (id: number) => void;
+    selectContact: (id: number) => void;
 };

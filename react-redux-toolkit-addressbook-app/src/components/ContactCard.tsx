@@ -1,15 +1,19 @@
 import { Component } from 'react';
 import { ContactCardProps } from '../types/contactType';
-import { deleteContact } from '../redux/contactSlice';
+import { deleteContact, selectContact } from '../redux/contactSlice';
 import { connect } from 'react-redux';
 
 export class ContactCard extends Component<ContactCardProps> {
     render() {
-        const { contact, deleteContact } = this.props;
+        const { contact, deleteContact, selectContact } = this.props;
         return (
             <>
                 <div className='row'>
-                    <div className='col-10'>
+                    <div
+                        className='col-10'
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => selectContact(contact.id)}
+                    >
                         <h5>
                             {contact.firstname} {contact.lastname}
                         </h5>
@@ -31,5 +35,6 @@ export class ContactCard extends Component<ContactCardProps> {
 }
 const mapDispatch = {
     deleteContact,
+    selectContact,
 };
 export default connect(null, mapDispatch)(ContactCard);
