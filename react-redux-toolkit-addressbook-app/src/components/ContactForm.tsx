@@ -42,12 +42,13 @@ export class ContactForm extends Component<ContactFormProps, ContactFormState> {
         });
     };
 
+    // executes when state/props changes
     componentDidUpdate() {
         const { isEditing, selectedContact } = this.props;
 
         if (
             isEditing === true &&
-            selectedContact &&
+            selectedContact.id &&
             this.state.id !== selectedContact.id
         ) {
             this.setState({ ...this.state, ...this.props.selectedContact });

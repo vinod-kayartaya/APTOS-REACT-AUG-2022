@@ -30,11 +30,12 @@ export const contactSlice = createSlice({
             // action.payload is assumed to be the 'id' of the contact to be selected
             let contact = state.contacts.find((c: any) => c.id === action.payload);
             if (contact) {
-                state.selectedContact = contact;
+                state.selectedContact = { ...contact };
             }
         },
         setIsEditing: (state, action) => {
             // action.payload is assumed to be boolean
+            console.log('inside isEditing() action is', action)
             state.isEditing = action.payload
         },
         updateContact: (state, action) => {
