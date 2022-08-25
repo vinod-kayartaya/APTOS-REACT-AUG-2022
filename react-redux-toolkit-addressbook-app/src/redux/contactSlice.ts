@@ -14,10 +14,16 @@ export const contactSlice = createSlice({
     reducers: {
         addContact: (state: any, action: any) => {
             // action.payload is assumed to be the new contact to add to the existing state
-            const id = state.contacts.length > 0
-                ? 1 + Math.max(...state.contacts.map((c: any) => c.id))
-                : 1;
-            state.contacts.push({ ...action.payload, id }); // directly mutate the state
+
+            fetch('http://localhost:8080/customers/')
+                .then(resp => resp.json())
+                .then(() => {
+                    const id = state.contacts.length > 0
+                        ? 1 + Math.max(...state.contacts.map((c: any) => c.id))
+                        : 1;
+                    state.contacts.push({ ...action.payload, id }); // directly mutate the state
+                })
+
         },
         deleteContact: (state, action) => {
             // action.payload is assumed to be the 'id' of the contact to be deleted
